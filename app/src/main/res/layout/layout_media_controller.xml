@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/dp_3">
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_18"
+        android:textStyle="bold"
+        android:ellipsize="end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <TextView
+        android:id="@+id/textStartTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/slider"
+        app:layout_constraintBottom_toBottomOf="@id/slider"
+        android:text="@string/text_0_00" />
+
+    <TextView
+        android:id="@+id/textEndTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/slider"
+        app:layout_constraintBottom_toBottomOf="@id/slider" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:valueFrom="@integer/integer_0"
+        android:stepSize="@integer/integer_1"
+        android:importantForAutofill="noExcludeDescendants"
+        app:layout_constraintTop_toBottomOf="@id/textTitle"
+        app:layout_constraintLeft_toRightOf="@id/textStartTime"
+        app:layout_constraintRight_toLeftOf="@id/textEndTime" />
+
+    <ImageButton
+        android:id="@+id/buttonPlayOrPause"
+        android:src="@drawable/ic_baseline_play_arrow_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/slider"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:contentDescription="@string/text_play_pause" />
+
+    <ImageButton
+        android:id="@+id/buttonNext"
+        android:src="@drawable/ic_baseline_skip_next_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/buttonPlayOrPause"
+        app:layout_constraintLeft_toRightOf="@id/buttonPlayOrPause"
+        android:contentDescription="@string/text_next" />
+
+    <ImageButton
+        android:id="@+id/buttonPrevious"
+        android:src="@drawable/ic_baseline_skip_previous_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/buttonPlayOrPause"
+        app:layout_constraintRight_toLeftOf="@id/buttonPlayOrPause"
+        android:contentDescription="@string/text_previous" />
+
+    <ImageButton
+        android:id="@+id/buttonLoopOneOrAll"
+        android:src="@drawable/ic_baseline_refresh_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/buttonPlayOrPause"
+        app:layout_constraintLeft_toRightOf="@id/buttonNext"
+        android:contentDescription="@string/text_loop_one_or_all" />
+
+    <ImageButton
+        android:id="@+id/buttonShuffle"
+        android:src="@drawable/ic_baseline_shuffle_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/buttonPlayOrPause"
+        app:layout_constraintRight_toLeftOf="@+id/buttonPrevious"
+        android:contentDescription="@string/text_shuffle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
